@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 
 const Dashboard = () => {
 	return (
-		<Container className="dash">
+		<Container>
 			<Col>
 				<Row>
 					<p>stuff</p>

@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Dash from './components/dash'
-import { Container } from 'reactstrap';
-
 
 function App() {
 	return (
@@ -11,10 +9,8 @@ function App() {
 			<header className="App-header">
 				<p>Header</p>
 			</header>
-			
-			<Container className="main">
-				<Dash />
-			</Container>
+
+			<Route exact path="/" component={Dash} />
 
 			<footer className="App-footer">
 				<p>footer</p>
