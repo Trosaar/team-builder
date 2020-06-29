@@ -23,7 +23,7 @@ const Dashboard = () => {
 					<form onSubmit={Formik.handleSubmit}>
 						<label htmlFor="name">Name</label>
 						<input id='name' name='name' type='text' onChange={Formik.handleChange} value={Formik.values.name} />
-						<Button type='reset' onClick={Formik.handleReset}>Reset</Button>
+						<Button type='submit' onClick={Formik.handleSubmit}>Submit</Button>
 					</form>
 				</Row>
 			</Col>
