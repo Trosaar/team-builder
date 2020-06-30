@@ -1,9 +1,11 @@
 import {
 	LOGIN_TRY, LOGIN_SUCCESS, LOGIN_FAIL,
-	REGISTERING, LOGOUT
+	REGISTERING, LOGOUT,
+	TEST
 } from "../actions"
 
 const initialState = {
+	firstName: "",
 	loggedIn: false,
 	loggingIn: false,
 	registering: false,
@@ -47,6 +49,15 @@ export default (state = initialState, action) => {
 				...state,
 				loggedIn: false
 			}
+		}
+		case TEST: {
+			return {
+				...state,
+				firstName: action.payload.firstName
+			}
+		}
+		default: {
+			return state
 		}
 	}
 }

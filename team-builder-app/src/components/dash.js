@@ -1,9 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Container, Row, Col, Button } from 'reactstrap';
 import { useFormik } from 'formik';
+import { TEST } from '../actions'
 
 const Dashboard = () => {
+
+	const dispatch = useDispatch();
+	const error = useSelector(state => state.error)
+	const fName = useSelector(state => state.firstName)
+
 
 	const Formik = useFormik({
 		initialValues: {
@@ -11,8 +17,11 @@ const Dashboard = () => {
 			lastName: '',
 			email: '',
 		},
-		onsubmit: value => {
-			alert(JSON.stringify(value, null, 2))
+		onSubmit: value => {
+			dispatch({
+				type: TEST,
+				payload: value
+			})
 		},
 	})
 
@@ -21,8 +30,8 @@ const Dashboard = () => {
 			<Col>
 				<Row>
 					<form onSubmit={Formik.handleSubmit}>
-						<label htmlFor="name">Name</label>
-						<input id='name' name='name' type='text' onChange={Formik.handleChange} value={Formik.values.name} />
+						<label htmlFor="name">First Name</label>
+						<input id='firstName' name='firstName' type='text' onChange={Formik.handleChange} value={Formik.values.firstName} />
 						<Button type='submit' onClick={Formik.handleSubmit}>Submit</Button>
 					</form>
 				</Row>
