@@ -5,7 +5,7 @@ import {
 } from "../actions"
 
 const initialState = {
-	firstName: "",
+	teamMembers: {},
 	loggedIn: false,
 	loggingIn: false,
 	registering: false,
@@ -53,7 +53,7 @@ export default (state = initialState, action) => {
 		case TEST: {
 			return {
 				...state,
-				firstName: action.payload.firstName
+				teamMembers: action.payload
 			}
 		}
 		default: {
