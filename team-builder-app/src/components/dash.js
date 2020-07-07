@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container, Row, Col, Button } from 'reactstrap';
-import { useFormik } from 'formik';
+import { useFormik, validate } from 'formik';
 import { TEST } from '../actions'
 
 const Dashboard = () => {
@@ -10,6 +10,20 @@ const Dashboard = () => {
 	const error = useSelector(state => state.error)
 	const fName = useSelector(state => state.firstName)
 	const teamMembers = useSelector(state => state.teamMembers)
+
+	const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+	const validate = (values, props /* only available when using withFormik */) => {
+		return sleep(2000).then(() => {
+			const errors = {};
+
+			if (['admin', 'null', 'god'].includes(values.username)) {
+				errors.username = 'Nice try';
+			}
+
+			return errors;
+		});
+	};
 
 	const Formik = useFormik({
 		initialValues: {
