@@ -51,9 +51,17 @@ export default (state = initialState, action) => {
 			}
 		}
 		case TEST: {
+
+			const updatedTeam = {
+				...state.teamMembers,
+				[Object.keys(state.teamMembers).length]: {
+					firstName: action.payload.firstName
+				}
+			}
+
 			return {
 				...state,
-				teamMembers: action.payload
+				teamMembers: updatedTeam
 			}
 		}
 		default: {
