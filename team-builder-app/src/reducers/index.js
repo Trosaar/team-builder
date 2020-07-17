@@ -55,7 +55,8 @@ export default (state = initialState, action) => {
 			const updatedTeam = {
 				...state.teamMembers,
 				[Object.keys(state.teamMembers).length]: {
-					firstName: action.payload.firstName
+					firstName: action.payload.firstName,
+					lastName: action.payload.lastName
 				}
 			}
 

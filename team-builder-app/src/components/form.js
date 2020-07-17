@@ -16,11 +16,11 @@ const FormManager = () => {
 	const SignupSchema = Yup.object().shape({
 		firstName: Yup.string()
 			.min(2, 'FName Too Short!')
-			.max(50, 'FName Too Long!')
+			.max(25, 'FName Too Long!')
 			.required('FName Required'),
 		lastName: Yup.string()
 			.min(2, 'LName Too Short!')
-			.max(50, 'LName Too Long!')
+			.max(25, 'LName Too Long!')
 			.required('LName Required'),
 		});
 		
@@ -30,11 +30,10 @@ const FormManager = () => {
 			initialValues={{
 				firstName: '',
 				lastName: '',
-				email: '',
 			}}
 			validationSchema={SignupSchema}
 			onSubmit={ value => {
-				console.log(value)
+				console.log("Submit", value)
 				dispatch({
 					type: TEST,
 					payload: value
@@ -45,39 +44,37 @@ const FormManager = () => {
 				<Form>
 					<div>
 						<Row>
-					 		{errors.firstName ? console.log(errors) : <div>{errors.firstName}</div>}
+					 		{errors.firstName ? console.log(errors, touched) : <div>{errors.firstName}</div>}
+							{errors.firstName ? <div>{errors.firstName}</div> : null}
 					 	</Row>
 
-					<Row>
-						<Col>
-							<label htmlFor="name">First Name </label> 
-						</Col>
-						<Col>
-							<Field 
-								id='firstName'
-								name='firstName'
-								onChange={Formik.handleChange}
-								value={Formik.firstName} />
-						</Col>
-					</Row>
-				</div>
-				<div id="LastName">
+						<Row>
+							<Col>
+								<label htmlFor="name">First Name </label> 
+							</Col>
 
-					<Row>
-						<Col>
-							<label htmlFor="name">Last Name </label> 
-						</Col>
-						<Col>
-							<input 
-								id='lastName'
-								name='lastName'
-								type='text'
-								onChange={Formik.handleChange}
-								value={Formik.lastName} />
-						</Col>
-					</Row>
-				</div>
-				<Button type='submit' onClick={Formik.handleSubmit}>Submit</Button>
+							<Col>
+								<Field name='firstName'/>
+							</Col>
+						</Row>
+					</div>
+					<div id="LastName">
+
+						<Row>
+					 		{errors.lastName ? <div>{errors.lastName}</div> : null}
+					 	</Row>
+
+						<Row>
+							<Col>
+								<label htmlFor="name">Last Name </label>
+							</Col>
+
+							<Col>
+								<Field name='lastName'/>
+							</Col>
+						</Row>
+					</div>
+					<Button type='submit' onClick={Formik.handleSubmit}>Submit</Button>
 				</Form>
 			)}</Formik>
 		</Container>
