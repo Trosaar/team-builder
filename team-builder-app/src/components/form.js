@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col, Button, Container } from 'reactstrap';
 import { Formik, Form, useFormik, Field } from 'formik';
-import { TEST } from '../actions'
+import { NEW_MEMBER } from '../actions'
 
 const FormManager = () => {
 
@@ -35,7 +35,7 @@ const FormManager = () => {
 			onSubmit={ value => {
 				console.log("Submit", value)
 				dispatch({
-					type: TEST,
+					type: NEW_MEMBER,
 					payload: value
 				})
 			}}>

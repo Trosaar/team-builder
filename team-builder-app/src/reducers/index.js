@@ -1,7 +1,7 @@
 import {
 	LOGIN_TRY, LOGIN_SUCCESS, LOGIN_FAIL,
 	REGISTERING, LOGOUT,
-	TEST
+	NEW_MEMBER
 } from "../actions"
 
 const initialState = {
@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
 				loggedIn: false
 			}
 		}
-		case TEST: {
+		case NEW_MEMBER: {
 
 			const updatedTeam = {
 				...state.teamMembers,

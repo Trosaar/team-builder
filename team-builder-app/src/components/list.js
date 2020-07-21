@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Container, Row, Col, Button, Form } from 'reactstrap';
 
-const List = () => {
+const List = (props) => {
 
 	return (
 		<Container>List</Container>
