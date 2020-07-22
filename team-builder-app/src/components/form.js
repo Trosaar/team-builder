@@ -2,7 +2,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col, Button, Container } from 'reactstrap';
-import { Formik, Form, useFormik, Field } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import { NEW_MEMBER } from '../actions'
 
 const FormManager = () => {
@@ -22,6 +22,8 @@ const FormManager = () => {
 			.min(2, 'LName Too Short!')
 			.max(25, 'LName Too Long!')
 			.required('LName Required'),
+
+		// Name, price, quantity, description, cards, filters
 		});
 		
 	return (
