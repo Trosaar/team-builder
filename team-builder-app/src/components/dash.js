@@ -7,12 +7,9 @@ import FormManager from  './form.js'
 import List from './list.js'
 
 const Dashboard = () => {
-
-	const teamMembers = useSelector(state => state.teamMembers)
-
 	return (
 		<Container>
-			<List props={teamMembers}/>
+			<List />
 			<FormManager />
 		</Container>
 	)
