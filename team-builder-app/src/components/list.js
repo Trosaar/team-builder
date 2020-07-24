@@ -8,14 +8,14 @@ const List = (props) => {
 
 	console.log(teamMembers);
 
-	if (Object.keys(teamMembers).length > 0){
-		Object.keys(teamMembers).map((member) => {
-				console.log("each member: ",teamMembers[member])
-			})
-		}
 
 	return (
-		<Container>List</Container>
+		<Container>
+		{ Object.keys(teamMembers).map((member) => {
+				return (
+					<p>{teamMembers[member]["firstName"]}</p>
+	)})}
+		</Container>
 	)
 }
 
