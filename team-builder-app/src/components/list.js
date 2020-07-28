@@ -13,7 +13,7 @@ const List = (props) => {
 		<Container>
 		{ Object.keys(teamMembers).map((member) => {
 				return (
-					<p>{teamMembers[member]["firstName"]}</p>
+					<p>{`${teamMembers[member]["firstName"]} ${teamMembers[member]["lastName"]}`}</p>
 	)})}
 		</Container>
 	)
