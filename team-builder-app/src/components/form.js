@@ -22,6 +22,10 @@ const FormManager = () => {
 			.min(2, 'LName Too Short!')
 			.max(25, 'LName Too Long!')
 			.required('LName Required'),
+		email: Yup.string().email()
+			.max(50, 'Please use a valid email')
+			.min(4, 'Email is too short to be valid')
+			.required('Email required'),
 
 		// Name, price, quantity, description, cards, filters
 		});
@@ -32,6 +36,7 @@ const FormManager = () => {
 			initialValues={{
 				firstName: '',
 				lastName: '',
+				email: '',
 			}}
 			validationSchema={SignupSchema}
 			onSubmit={ value => {
@@ -52,7 +57,7 @@ const FormManager = () => {
 
 						<Row>
 							<Col>
-								<label htmlFor="name">First Name </label> 
+								<label htmlFor="name">First Name</label> 
 							</Col>
 
 							<Col>
@@ -60,7 +65,7 @@ const FormManager = () => {
 							</Col>
 						</Row>
 					</div>
-					<div id="LastName">
+					<div>
 
 						<Row>
 					 		{errors.lastName ? <div>{errors.lastName}</div> : null}
@@ -68,7 +73,7 @@ const FormManager = () => {
 
 						<Row>
 							<Col>
-								<label htmlFor="name">Last Name </label>
+								<label htmlFor="name">Last Name</label>
 							</Col>
 
 							<Col>
@@ -76,7 +81,23 @@ const FormManager = () => {
 							</Col>
 						</Row>
 					</div>
-					<Button type='submit' onClick={Formik.handleSubmit}>Submit</Button>
+					<div>
+						<Row>
+					 		{errors.email ? console.log(errors, touched) : <div>{errors.email}</div>}
+							{errors.email ? <div>{errors.email}</div> : null}
+					 	</Row>
+
+						<Row>
+							<Col>
+								<label htmlFor="email">Email</label> 
+							</Col>
+
+							<Col>
+								<Field name='email'/>
+							</Col>
+						</Row>
+					</div>
+					<Button type='submit' onClick={Formik.handleSubmit}>Sign Up</Button>
 				</Form>
 			)}</Formik>
 		</Container>
