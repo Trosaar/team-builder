@@ -26,8 +26,6 @@ const FormManager = () => {
 			.max(50, 'Please use a valid email')
 			.min(4, 'Email is too short to be valid')
 			.required('Email required'),
-
-		// Name, price, quantity, description, cards, filters
 		});
 		
 	return (
