@@ -2,6 +2,7 @@ import React from 'react';
 import './css/index.css';
 import { Route } from 'react-router-dom';
 import Dash from './components/dash'
+import Signup from './components/Signup'
 
 function App() {
 	return (
@@ -10,7 +11,7 @@ function App() {
 				<p>Header</p>
 			</header>
 
-			<Route exact path="/" component={Dash} />
+			<Route exact path="/Signup" component={Signup} />
 
 			<footer className="App-footer">
 				<p>footer</p>
