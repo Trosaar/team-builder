@@ -17,9 +17,17 @@ const initialState = {
 export default (state = initialState, action) => {
 	switch(action.type) {
 		case REGISTERING: {
+			const updatedTeam = {
+				...state.teamMembers,
+				[Object.keys(state.teamMembers).length]: {
+					firstName: action.payload.firstName,
+					lastName: action.payload.lastName
+				}
+			}
+
 			return {
 				...state,
-				return: true,
+				teamMembers: updatedTeam,
 				error: null
 			}
 		}
@@ -48,21 +56,6 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				loggedIn: false
-			}
-		}
-		case NEW_MEMBER: {
-
-			const updatedTeam = {
-				...state.teamMembers,
-				[Object.keys(state.teamMembers).length]: {
-					firstName: action.payload.firstName,
-					lastName: action.payload.lastName
-				}
-			}
-
-			return {
-				...state,
-				teamMembers: updatedTeam
 			}
 		}
 		default: {

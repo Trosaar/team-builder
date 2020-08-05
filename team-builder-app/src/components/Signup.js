@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col, Button, Container } from 'reactstrap';
 import { Formik, Form, Field, yupToFormErrors } from 'formik';
-import { NEW_MEMBER } from '../actions'
+import { REGISTERING } from '../actions'
 
 const SignUp = () => {
 
@@ -44,7 +44,7 @@ const SignUp = () => {
 			onSubmit={ value => {
 				console.log("Submit", value)
 				dispatch({
-					type: NEW_MEMBER,
+					type: REGISTERING,
 					payload: value
 				})
 			}}>
