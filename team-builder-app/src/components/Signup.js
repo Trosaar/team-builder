@@ -14,14 +14,14 @@ const SignUp = () => {
 	const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 	const SignupSchema = Yup.object().shape({
-		firstName: Yup.string()
-			.min(2, 'FName Too Short!')
-			.max(25, 'FName Too Long!')
-			.required('FName Required'),
-		lastName: Yup.string()
-			.min(2, 'LName Too Short!')
-			.max(25, 'LName Too Long!')
-			.required('LName Required'),
+		firstName: Yup.string().label('first name')
+			.min(2, 'First Name Too Short!')
+			.max(25, 'First Name Too Long!')
+			.required('First Name Required'),
+		lastName: Yup.string().label('last name')
+			.min(2, 'Last Name Too Short!')
+			.max(25, 'Last Name Too Long!')
+			.required('Last Name Required'),
 		email: Yup.string().label('email').email()
 			.max(50, 'Please use a valid email')
 			.min(4, 'Email is too short to be valid')
@@ -29,7 +29,7 @@ const SignUp = () => {
         password: Yup.string().label('password')
             .min(8, 'Password must be at least 8 characters')
             .max(25, 'must be less than 26 characters')
-            .required('password required')
+            .required('Password Required')
         });
 		
 	return (
@@ -39,6 +39,7 @@ const SignUp = () => {
 				firstName: '',
 				lastName: '',
 				email: '',
+				password: '',
 			}}
 			validationSchema={SignupSchema}
 			onSubmit={ value => {
@@ -117,7 +118,6 @@ const SignUp = () => {
 				</Form>
 			)}</Formik>
 		</Container>
-
     )
 }
 

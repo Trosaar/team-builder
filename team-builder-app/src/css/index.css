@@ -141,6 +141,16 @@ table {
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
 }
+.App-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  min-width: 100vw;
+}
+.selected {
+  color: orange;
+  font-weight: bold;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

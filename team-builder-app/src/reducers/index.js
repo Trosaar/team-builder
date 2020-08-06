@@ -17,17 +17,18 @@ const initialState = {
 export default (state = initialState, action) => {
 	switch(action.type) {
 		case REGISTERING: {
-			const updatedTeam = {
+			const NewMember = {
 				...state.teamMembers,
 				[Object.keys(state.teamMembers).length]: {
 					firstName: action.payload.firstName,
-					lastName: action.payload.lastName
+					lastName: action.payload.lastName,
+					email: action.payload.email
 				}
 			}
 
 			return {
 				...state,
-				teamMembers: updatedTeam,
+				teamMembers: NewMember,
 				error: null
 			}
 		}

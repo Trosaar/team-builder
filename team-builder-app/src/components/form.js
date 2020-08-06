@@ -8,98 +8,9 @@ import { NEW_MEMBER } from '../actions'
 const FormManager = () => {
 
 	const dispatch = useDispatch();
-	const fName = useSelector(state => state.firstName)
-	const teamMembers = useSelector(state => state.teamMembers)
-
-	const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-	const SignupSchema = Yup.object().shape({
-		firstName: Yup.string()
-			.min(2, 'FName Too Short!')
-			.max(25, 'FName Too Long!')
-			.required('FName Required'),
-		lastName: Yup.string()
-			.min(2, 'LName Too Short!')
-			.max(25, 'LName Too Long!')
-			.required('LName Required'),
-		email: Yup.string().email()
-			.max(50, 'Please use a valid email')
-			.min(4, 'Email is too short to be valid')
-			.required('Email required'),
-		});
 		
 	return (
-		<Container>
-			<Formik
-			initialValues={{
-				firstName: '',
-				lastName: '',
-				email: '',
-			}}
-			validationSchema={SignupSchema}
-			onSubmit={ value => {
-				console.log("Submit", value)
-				dispatch({
-					type: NEW_MEMBER,
-					payload: value
-				})
-			}}>
-
-			{({ errors, touched }) => (
-				<Form>
-					<div>
-						<Row>
-					 		{errors.firstName ? console.log(errors, touched) : <div>{errors.firstName}</div>}
-							{errors.firstName ? <div>{errors.firstName}</div> : null}
-					 	</Row>
-
-						<Row>
-							<Col>
-								<label htmlFor="name">First Name</label> 
-							</Col>
-
-							<Col>
-								<Field name='firstName'/>
-							</Col>
-						</Row>
-					</div>
-					<div>
-
-						<Row>
-					 		{errors.lastName ? <div>{errors.lastName}</div> : null}
-					 	</Row>
-
-						<Row>
-							<Col>
-								<label htmlFor="name">Last Name</label>
-							</Col>
-
-							<Col>
-								<Field name='lastName'/>
-							</Col>
-						</Row>
-					</div>
-					<div>
-						<Row>
-					 		{errors.email ? console.log(errors, touched) : <div>{errors.email}</div>}
-							{errors.email ? <div>{errors.email}</div> : null}
-					 	</Row>
-
-						<Row>
-							<Col>
-								<label htmlFor="email">Email</label> 
-							</Col>
-
-							<Col>
-								<Field name='email'/>
-							</Col>
-						</Row>
-					</div>
-					<Button type='submit' onClick={Formik.handleSubmit}>Sign Up</Button>
-				</Form>
-			)}</Formik>
-		</Container>
-
+		<div></div>
 	)
 
 	const validate = (values, props /* only available when using withFormik */) => {
