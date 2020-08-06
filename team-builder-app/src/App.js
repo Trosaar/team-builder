@@ -8,11 +8,11 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
-				<NavLink exact to={'/'} activeClassName="selected">
+				<NavLink exact to={'/'} activeClassName="selected" className='navLink'>
 					Home
 				</NavLink>
 
-				<NavLink exact to={'/Signup'} activeClassName="selected">
+				<NavLink exact to={'/Signup'} activeClassName="selected" className='navLink'>
 					Sign Up
 				</NavLink>
 			</header>
