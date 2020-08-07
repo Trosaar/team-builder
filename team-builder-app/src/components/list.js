@@ -4,17 +4,17 @@ import { Container, Row, Col, Button, Form } from 'reactstrap';
 
 const List = (props) => {
 
-	const teamMembers = useSelector(state => state.teamMembers)
+	const items = useSelector(state => state.items)
 
-	console.log(teamMembers);
+	console.log(items);
 
 
 	return (
 		<Container>
-		{ Object.keys(teamMembers).map((member) => {
+		{/* { Object.keys(items).map((item) => {
 				return (
 					<p>{`${teamMembers[member]["firstName"]} ${teamMembers[member]["lastName"]}`}</p>
-	)})}
+	)})} */}
 		</Container>
 	)
 }

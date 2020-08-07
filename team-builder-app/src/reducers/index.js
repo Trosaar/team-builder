@@ -1,16 +1,20 @@
 import {
 	LOGIN_TRY, LOGIN_SUCCESS, LOGIN_FAIL,
 	REGISTERING, LOGOUT,
-	NEW_MEMBER
+	NEW_MEMBER,
+	NEWITEM
 } from "../actions"
 
 const initialState = {
 	teamMembers: {},
+	items: {},
 	loggedIn: false,
 	loggingIn: false,
-	registering: false,
-	updating: false,
-	deleting: false,
+	registeringUser: false,
+	updatingUser: false,
+	deletingUser: false,
+	updatingItem: false,
+	deletingItem: false,
 	error: null
 }
 
@@ -57,6 +61,11 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				loggedIn: false
+			}
+		}
+		case NEWITEM: {
+			return {
+				...state
 			}
 		}
 		default: {
