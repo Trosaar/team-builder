@@ -12,7 +12,7 @@ const Dashboard = () => {
 	const loggedIn = useSelector(state => state.loggedIn)
 	const history = useHistory()
 
-	if (loggedIn) {
+	if (!loggedIn) {
 		return (
 			<Container>
 				<List />

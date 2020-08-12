@@ -10,15 +10,15 @@ const FormManager = () => {
 	const dispatch = useDispatch();
 
 	const SignupSchema = Yup.object().shape({
-		iName: Yup.string().label('first name')
+		iName: Yup.string().label('name')
 			.min(2, 'First Name Too Short!')
 			.max(25, 'First Name Too Long!')
 			.required('First Name Required'),
-		iDesc: Yup.string().label('last name')
+		iDesc: Yup.string().label('description')
 			.min(2, 'Last Name Too Short!')
-			.max(25, 'Last Name Too Long!')
+			.max(250, 'Last Name Too Long!')
 			.required('Last Name Required'),
-		iPrice: Yup.string().label('email').email()
+		iPrice: Yup.number().label('price')
 			.max(50, 'Please use a valid email')
 			.min(4, 'Email is too short to be valid')
             .required('Email required'),
