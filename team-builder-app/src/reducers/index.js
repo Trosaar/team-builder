@@ -64,8 +64,18 @@ export default (state = initialState, action) => {
 			}
 		}
 		case NEWITEM: {
+			const NewItem = {
+				...state.items,
+				[Object.keys(state.items).length]: {
+					iName: action.payload.iName,
+					iDesc: action.payload.iDesc,
+					iPrice: action.payload.iPrice
+				}
+			}
+			
 			return {
-				...state
+				...state,
+				items: NewItem
 			}
 		}
 		default: {
