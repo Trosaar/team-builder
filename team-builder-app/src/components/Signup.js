@@ -48,6 +48,8 @@ const SignUp = () => {
 					type: REGISTERING,
 					payload: value
 				})
+				value.target.reset()
+				// axios.post
 			}}>
 
 			{({ errors, touched }) => (
