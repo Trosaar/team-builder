@@ -11,17 +11,17 @@ const FormManager = () => {
 
 	const SignupSchema = Yup.object().shape({
 		iName: Yup.string().label('name')
-			.min(2, 'First Name Too Short!')
-			.max(25, 'First Name Too Long!')
-			.required('First Name Required'),
+			.min(2, 'Item name is too short')
+			.max(25, 'Item name is too long')
+			.required('Each item must have a name'),
 		iDesc: Yup.string().label('description')
-			.min(2, 'Last Name Too Short!')
-			.max(250, 'Last Name Too Long!')
-			.required('Last Name Required'),
+			.min(3, 'Descrptions must have more detail')
+			.max(250, 'Must be under 250 characters')
+			.required('Each item needs a description'),
 		iPrice: Yup.number().label('price')
-			.max(50, 'Please use a valid email')
-			.min(4, 'Email is too short to be valid')
-            .required('Email required'),
+			.max(9, 'Price is too large')
+			.min(1, 'Each item needs a price')
+            .required('Please add a price for this item'),
 	});
 
 		
