@@ -13,7 +13,7 @@ const List = (props) => {
 		<Container>
 		{ Object.keys(items).map((item) => {
 				return (
-					<p>{`${items[item]["iName"]} ${items[item]["iDesc"]}`}</p>
+					<p>{`${items[item]["iName"]} ${items[item]["iDesc"]} and costs $${items[item]["iPrice"]}`}</p>
 	)})}
 		</Container>
 	)
