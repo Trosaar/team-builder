@@ -19,7 +19,7 @@ const FormManager = () => {
 			.max(250, 'Must be under 250 characters')
 			.required('Each item needs a description'),
 		iPrice: Yup.number().label('price')
-			.max(9, 'Price is too large')
+			.max(9999.99, 'Price is too large')
 			.min(1, 'Each item needs a price')
             .required('Please add a price for this item'),
 	});

@@ -11,10 +11,10 @@ const List = (props) => {
 
 	return (
 		<Container>
-		{/* { Object.keys(items).map((item) => {
+		{ Object.keys(items).map((item) => {
 				return (
-					<p>{`${teamMembers[member]["firstName"]} ${teamMembers[member]["lastName"]}`}</p>
-	)})} */}
+					<p>{`${items[item]["iName"]} ${items[item]["iDesc"]}`}</p>
+	)})}
 		</Container>
 	)
 }
