@@ -1,21 +1,20 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Container, Row, Col, Button, Form } from 'reactstrap';
+import { CardColumns } from 'reactstrap';
+import ItemCard from  './ItemCard.js'
+
 
 const List = (props) => {
 
 	const items = useSelector(state => state.items)
 
-	console.log(items);
-
-
 	return (
-		<Container>
+		<CardColumns>
 		{ Object.keys(items).map((item) => {
 				return (
-					<p>{`${items[item]["iName"]} ${items[item]["iDesc"]} and costs $${items[item]["iPrice"]}`}</p>
+					<ItemCard item={item} />
 	)})}
-		</Container>
+		</CardColumns>
 	)
 }
 
