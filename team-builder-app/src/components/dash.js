@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Container, Row, Col, Button, Form } from 'reactstrap';
+import { Container } from 'semantic-ui-react';
 import { useFormik } from 'formik';
 import { TEST } from '../actions';
 import FormManager from  './form.js'

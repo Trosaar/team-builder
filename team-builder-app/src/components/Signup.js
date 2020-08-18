@@ -1,17 +1,13 @@
 import React from 'react';
 import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
-import { Row, Col, Button, Container } from 'reactstrap';
-import { Formik, Form, Field, yupToFormErrors } from 'formik';
+import { Segment, Button, Container } from 'semantic-ui-react';
+import { Formik, Form, Field } from 'formik';
 import { REGISTERING } from '../actions'
 
 const SignUp = () => {
 
 	const dispatch = useDispatch();
-	const fName = useSelector(state => state.firstName)
-	const teamMembers = useSelector(state => state.teamMembers)
-
-	const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 	const SignupSchema = Yup.object().shape({
 		firstName: Yup.string().label('first name')
@@ -54,67 +50,67 @@ const SignUp = () => {
 
 			{({ errors, touched }) => (
 				<Form>
-					<div>
-						<Row>
+					<Segment.Group>
+						<Segment>
 							{errors.firstName && touched.firstName ? <div>{errors.firstName}</div> : null}
-					 	</Row>
+					 	</Segment>
 
-						<Row>
-							<Col>
+						<Segment.Group>
+							<Segment>
 								<label htmlFor="name">First Name</label> 
-							</Col>
+							</Segment>
 
-							<Col>
+							<Segment>
 								<Field name='firstName'/>
-							</Col>
-						</Row>
-					</div>
-					<div>
+							</Segment>
+						</Segment.Group>
+					</Segment.Group>
+					<Segment.Group>
 
-						<Row>
+						<Segment>
 					 		{errors.lastName && touched.lastName ? <div>{errors.lastName}</div> : null}
-					 	</Row>
+					 	</Segment>
 
-						<Row>
-							<Col>
+						<Segment.Group>
+							<Segment>
 								<label htmlFor="name">Last Name</label>
-							</Col>
+							</Segment>
 
-							<Col>
+							<Segment>
 								<Field name='lastName'/>
-							</Col>
-						</Row>
-					</div>
-					<div>
-						<Row>
+							</Segment>
+						</Segment.Group>
+					</Segment.Group>
+					<Segment.Group>
+						<Segment>
 					 		{errors.email && touched.email ? <div>{errors.email}</div> : null}
-					 	</Row>
+					 	</Segment>
 
-						<Row>
-							<Col>
+						<Segment.Group>
+							<Segment>
 								<label htmlFor="email">Email</label> 
-							</Col>
+							</Segment>
 
-							<Col>
+							<Segment>
 								<Field name='email'/>
-							</Col>
-						</Row>
-					</div>
-                    <div>
-						<Row>
+							</Segment>
+						</Segment.Group>
+					</Segment.Group>
+                    <Segment.Group>
+						<Segment>
 							{errors.password && touched.password ? <div>{errors.password}</div> : null}
-					 	</Row>
+					 	</Segment>
 
-						<Row>
-							<Col>
+						<Segment.Group>
+							<Segment>
 								<label htmlFor="name">Password</label> 
-							</Col>
+							</Segment>
 
-							<Col>
+							<Segment>
 								<Field type='password' name='password'/>
-							</Col>
-						</Row>
-					</div>
+							</Segment>
+						</Segment.Group>
+					</Segment.Group>
 
 					<Button type='submit' onClick={Formik.handleSubmit}>Sign Up</Button>
 				</Form>

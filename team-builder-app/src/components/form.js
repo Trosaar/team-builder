@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
-import { Row, Col, Button, Container } from 'reactstrap';
+import { Segment, Button, Container, Input } from 'semantic-ui-react';
 import { Formik, Form, Field } from 'formik';
 import { NEWITEM } from '../actions'
 
@@ -44,52 +44,55 @@ const FormManager = () => {
 
 			{({ errors, touched }) => (
 				<Form>
-					<div>
-						<Row>
+					<Segment.Group>
+						<Segment>
 							{errors.iName && touched.iName ? <div>{errors.iName}</div> : null}
-					 	</Row>
+					 	</Segment>
 
-						<Row>
-							<Col>
+						<Segment.group>
+							<Segment>
 								<label htmlFor="name">Item Name</label> 
-							</Col>
+							</Segment>
 
-							<Col>
-								<Field name='iName'/>
-							</Col>
-						</Row>
-					</div>
-					<div>
+							<Form.Field
+								id='form-input-control-item-name'
+								control={Input}
+								label='Item name'
+								placeholder='Item name'
+							/>						
+						</Segment.group>
+					</Segment.Group>
+					<Segment.Group>
 
-						<Row>
+						<Segment>
 					 		{errors.iDesc && touched.iDesc ? <div>{errors.iDesc}</div> : null}
-					 	</Row>
+					 	</Segment>
 
-						<Row>
-							<Col>
+						<Segment.Group>
+							<Segment>
 								<label htmlFor="name">Item Description</label>
-							</Col>
+							</Segment>
 
-							<Col>
+							<Segment>
 								<Field name='iDesc'/>
-							</Col>
-						</Row>
-					</div>
-					<div>
-						<Row>
+							</Segment>
+						</Segment.Group>
+					</Segment.Group>
+					<Segment.Group>
+						<Segment>
 					 		{errors.iPrice && touched.iPrice ? <div>{errors.iPrice}</div> : null}
-					 	</Row>
+					 	</Segment>
 
-						<Row>
-							<Col>
+						<Segment.Group>
+							<Segment>
 								<label htmlFor="iPrice">Item Price</label> 
-							</Col>
+							</Segment>
 
-							<Col>
+							<Segment>
 								<Field name='iPrice'/>
-							</Col>
-						</Row>
-					</div>
+							</Segment>
+						</Segment.Group>
+					</Segment.Group>
 
 					<Button type='submit' onClick={Formik.handleSubmit}>Sign Up</Button>
 				</Form>

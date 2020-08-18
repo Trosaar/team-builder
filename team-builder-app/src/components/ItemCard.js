@@ -1,21 +1,16 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
-  } from 'reactstrap';
+import { Card, Button } from 'semantic-ui-react';
 
 const ItemCard = (props) => {
     const items = useSelector(state => state.items)
 
     return (
         <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }} outline color="danger">
-            <CardBody>
-                <CardTitle>{items[props.item].iName}</CardTitle>
-                <CardSubtitle>{items[props.item].iPrice}</CardSubtitle>
-                <CardText>{items[props.item].iDesc}</CardText>
-                <Button>Button</Button>
-            </CardBody>
+            <Card.Header>{items[props.item].iName}</Card.Header>
+            <Card.Content>{items[props.item].iPrice}</Card.Content>
+            <Card.Description>{items[props.item].iDesc}</Card.Description>
+            <Button>Button</Button>
         </Card>
     )
 }

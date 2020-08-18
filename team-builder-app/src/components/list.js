@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Container from '@material-ui/core/Button';
+import { Container } from 'semantic-ui-react';
 import ItemCard from  './ItemCard.js';
 
 

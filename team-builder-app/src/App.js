@@ -3,6 +3,7 @@ import './css/index.css';
 import { Route, NavLink } from 'react-router-dom';
 import Dash from './components/dash'
 import Signup from './components/Signup'
+import { Segment, Button, Container } from 'semantic-ui-react';
 
 function App() {
 	return (
