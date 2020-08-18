@@ -1,8 +1,8 @@
 import React from 'react';
 import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
-import { Segment, Button, Container, Input } from 'semantic-ui-react';
-import { Formik, Form, Field } from 'formik';
+import { Segment, Button, Container, Input, Form } from 'semantic-ui-react';
+import { Formik, Form as FForm} from 'formik';
 import { NEWITEM } from '../actions'
 
 const FormManager = () => {
@@ -43,18 +43,15 @@ const FormManager = () => {
 			}}>
 
 			{({ errors, touched }) => (
-				<Form>
+				<FForm>
 					<Segment.Group>
 						<Segment>
 							{errors.iName && touched.iName ? <div>{errors.iName}</div> : null}
 					 	</Segment>
 
 						<Segment.group>
-							<Segment>
-								<label htmlFor="name">Item Name</label> 
-							</Segment>
-
 							<Form.Field
+								error='Please give a name for your item'
 								id='form-input-control-item-name'
 								control={Input}
 								label='Item name'
@@ -69,13 +66,12 @@ const FormManager = () => {
 					 	</Segment>
 
 						<Segment.Group>
-							<Segment>
-								<label htmlFor="name">Item Description</label>
-							</Segment>
-
-							<Segment>
-								<Field name='iDesc'/>
-							</Segment>
+							<Form.Field
+								id='form-input-control-item-desc'
+								control={Input}
+								label='Item description'
+								placeholder='Item description'
+							/>						
 						</Segment.Group>
 					</Segment.Group>
 					<Segment.Group>
@@ -84,18 +80,17 @@ const FormManager = () => {
 					 	</Segment>
 
 						<Segment.Group>
-							<Segment>
-								<label htmlFor="iPrice">Item Price</label> 
-							</Segment>
-
-							<Segment>
-								<Field name='iPrice'/>
-							</Segment>
+							<Form.Field
+								id='form-input-control-item-price'
+								control={Input}
+								label='Item price'
+								placeholder='Item price'
+							/>						
 						</Segment.Group>
 					</Segment.Group>
 
 					<Button type='submit' onClick={Formik.handleSubmit}>Sign Up</Button>
-				</Form>
+				</FForm>
 			)}</Formik>
 		</Container>
 	)
