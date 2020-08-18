@@ -1,8 +1,8 @@
 import React from 'react';
 import * as Yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
-import { Segment, Button, Container, Input, Form } from 'semantic-ui-react';
-import { Formik, Form as FForm} from 'formik';
+import { Segment, Button, Container, Message } from 'semantic-ui-react';
+import { Formik, Form, Field } from 'formik';
 import { NEWITEM } from '../actions'
 
 const FormManager = () => {
@@ -43,21 +43,21 @@ const FormManager = () => {
 			}}>
 
 			{({ errors, touched }) => (
-				<FForm>
+				<Form>
 					<Segment.Group>
 						<Segment>
-							{errors.iName && touched.iName ? <div>{errors.iName}</div> : null}
+							{errors.iName && touched.iName ? <Message negative color='red'>{errors.iName}</Message> : null}
 					 	</Segment>
 
-						<Segment.group>
-							<Form.Field
-								error='Please give a name for your item'
-								id='form-input-control-item-name'
-								control={Input}
-								label='Item name'
-								placeholder='Item name'
-							/>						
-						</Segment.group>
+						<Segment.Group>
+							<Segment>
+								<label htmlFor="name">Item Name</label> 
+							</Segment>
+
+							<Segment>
+								<Field name='iName'/>
+							</Segment>
+						</Segment.Group>
 					</Segment.Group>
 					<Segment.Group>
 
@@ -66,12 +66,13 @@ const FormManager = () => {
 					 	</Segment>
 
 						<Segment.Group>
-							<Form.Field
-								id='form-input-control-item-desc'
-								control={Input}
-								label='Item description'
-								placeholder='Item description'
-							/>						
+							<Segment>
+								<label htmlFor="name">Item Description</label>
+							</Segment>
+
+							<Segment>
+								<Field name='iDesc'/>
+							</Segment>
 						</Segment.Group>
 					</Segment.Group>
 					<Segment.Group>
@@ -80,17 +81,18 @@ const FormManager = () => {
 					 	</Segment>
 
 						<Segment.Group>
-							<Form.Field
-								id='form-input-control-item-price'
-								control={Input}
-								label='Item price'
-								placeholder='Item price'
-							/>						
+							<Segment>
+								<label htmlFor="iPrice">Item Price</label> 
+							</Segment>
+
+							<Segment>
+								<Field name='iPrice'/>
+							</Segment>
 						</Segment.Group>
 					</Segment.Group>
 
 					<Button type='submit' onClick={Formik.handleSubmit}>Sign Up</Button>
-				</FForm>
+				</Form>
 			)}</Formik>
 		</Container>
 	)
