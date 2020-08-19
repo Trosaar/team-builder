@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 import { useFormik } from 'formik';
-import { TEST } from '../actions';
 import FormManager from  './form.js'
 import List from './list.js'
 
