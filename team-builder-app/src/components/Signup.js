@@ -81,6 +81,7 @@ const SignUp = () => {
 							</Segment>
 						</Segment.Group>
 					</Segment.Group>
+					
 					<Segment.Group>
 						<Segment>
 					 		{errors.email && touched.email ? <div>{errors.email}</div> : null}
@@ -96,6 +97,7 @@ const SignUp = () => {
 							</Segment>
 						</Segment.Group>
 					</Segment.Group>
+					
                     <Segment.Group>
 						<Segment>
 							{errors.password && touched.password ? <div>{errors.password}</div> : null}
