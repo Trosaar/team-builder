@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 import { useFormik } from 'formik';
-import FormManager from  './form.js'
 import List from './list.js'
 
 const Dashboard = () => {
@@ -15,7 +14,6 @@ const Dashboard = () => {
 		return (
 			<Container>
 				<List />
-				<FormManager />
 			</Container>
 		)
 	} else {

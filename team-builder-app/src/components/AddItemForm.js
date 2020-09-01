@@ -5,7 +5,7 @@ import { Segment, Button, Container, Message } from 'semantic-ui-react';
 import { Formik, Form, Field } from 'formik';
 import { NEWITEM } from '../actions'
 
-const FormManager = () => {
+const AddItem = () => {
 
 	const dispatch = useDispatch();
 
@@ -98,4 +98,4 @@ const FormManager = () => {
 	)
 }
 
-export default FormManager
+export default AddItem

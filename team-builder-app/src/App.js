@@ -3,6 +3,8 @@ import './css/index.css';
 import { Route, NavLink } from 'react-router-dom';
 import Dash from './components/dash'
 import Signup from './components/Signup'
+import AddItem from  './components/AddItemForm.js'
+
 
 function App() {
 	return (
@@ -12,6 +14,10 @@ function App() {
 					Home
 				</NavLink>
 
+				<NavLink exact to={'/add'} activeClassName="selected" className='addItem'>
+					Add Item
+				</NavLink>
+
 				<NavLink exact to={'/Signup'} activeClassName="selected" className='navLink'>
 					Sign Up
 				</NavLink>
@@ -19,6 +25,7 @@ function App() {
 
 			<Route exact path="/Signup" component={Signup} />
 			<Route exact path="/" component={Dash} />
+			<Route exact path="/add" component={AddItem} />
 
 			<footer className="App-footer">
 				<p>footer</p>

@@ -10,7 +10,7 @@ const ItemCard = (props) => {
             <Card.Header>{items[props.item].iName}</Card.Header>
             <Card.Content>{items[props.item].iPrice}</Card.Content>
             <Card.Description>{items[props.item].iDesc}</Card.Description>
-            <Button>Button</Button>
+            <Button>Edit</Button>
         </Card>
     )
 }
