@@ -14,7 +14,7 @@ function App() {
 					Home
 				</NavLink>
 
-				<NavLink exact to={'/add'} activeClassName="selected" className='addItem'>
+				<NavLink exact to={'/add'} activeClassName="selected" className='navLink'>
 					Add Item
 				</NavLink>
 
